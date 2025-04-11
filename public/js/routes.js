@@ -7,12 +7,12 @@ import sql from "mssql";
  * @returns Express router
  */
 export async function coursesRoutes() {
-  const pool = await connectToDatabase();
+  const pool = ""; // await connectToDatabase();
   const router = Router();
 
   router.get("/", async (_req, res) => {
-    const result = await new sql.Request(pool).execute("spCourses_GetAll");
-    const courses = result.recordset ?? [];
+    // const result = await new sql.Request(pool).execute("spCourses_GetAll");
+    const courses = [];
     res.render("index", { courses });
   });
 
