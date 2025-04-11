@@ -38,109 +38,21 @@
       <h1>Om</h1>
       <h2>Teknisk info</h2>
       <p>
-        Denna webbplats representerar frontend-delen av projektlösningen.
-        Backend-delen ligger i Azure tillsammans med min Microsoft SQL Server
-        db. Det enda som kostar är databas-servern men jag använder mig av
-        Azures gratis krediter för studenter så jag betalar ingenting. Men även
-        då så kostar en db-server typ 50kr i månaden (5$ för det billigaste
-        alternativet) vilket är rätt så värt om du bara vill ha något som
-        fungerar. Vem orkar konfigurera en egen server numera?
+        Denna fullstack app representerar en snabblösning av uppgiften där jag
+        har kombinerat frontend och backend kod från mitt tidigare försök. Denna
+        app körs via Azure tillsammans med min Microsoft SQL Server db. Det enda
+        som kostar är databas-servern men jag använder mig av Azures gratis
+        krediter för studenter så jag betalar ingenting. Men även då så kostar
+        en db-server typ 50kr i månaden (5$ för det billigaste alternativet)
+        vilket är rätt så värt om du bara vill ha något som fungerar.
       </p>
       <p>
-        Backend-koden hittar du här:
-        <a href="https://github.com/RobinHawiz/DT207G-moment1-backend"
-          >Backend repo</a
-        >. Varför jag valde att separera frontend och backend i första uppgiften
-        förklarar jag i backend repots README.md fil, men kortfattat så ville
-        jag se hur det skulle vara att skapa ett projekt som efterliknar ett
-        "real world" projekt. Man exponerar ju inte sin API-nyckel eller
-        business logic för frontend användare. Så jag testade göra på detta vis.
-        Om det var ett måste att använda sig av en view engine (EJS eller PUG)
-        så kan jag väl bara lägga till det för att visa för dig att jag kan
-        :&#41;
-      </p>
-      <p>
-        Syftet med frontend-klienten är att kunna visa hur man hämtar, raderar
-        och lägger till data i en databas. I startsidan hämtas data som visas i
-        en tabell. För varje kurs i tabellen kan man radera den valda kursen. I
-        lägg till sidan kan man lägga till kurser i databasen.
-      </p>
-      <p>
-        Syftet med backend-servern är att kunna visa hur backend-kod samspelar
-        med frontend och databasen. Kodbasen skulle efterlikna en MVC struktur
-        (utan view delen då) för att ha en modulär, skalbar och lätthanterbar
-        kod. Man kan väl säga att min backend följer en
-        Model-Controller-Service-Data access arkitektur, där view delen hanteras
-        av frontend-klienten. Hur allting fungerar i detalj förklarar jag i min
-        README.md och i själva koden. Men väldigt översiktligt kan man säga att:
-      </p>
-      <ul>
-        <li>Model: Representerar datastrukturen av den data som hanteras.</li>
-        <li>
-          Controller: Hanterar inkommande requests och responses, delegerar
-          logik som behöver köras till Service layer och skickar tillbaka
-          responses eller errors.
-        </li>
-        <li>
-          Service: Hanterar affärslogiken (business logic) och ansvarar för att
-          begära data från data access layer.
-        </li>
-        <li>
-          Data access: Kommunicerar med databasen via lagrade rutiner (stored
-          procedures).
-        </li>
-      </ul>
-      <h2>Slutsatser</h2>
-      <p>
-        En disclaimer är att min frontend kod är klonad från:
-        <a href="https://github.com/RobinHawiz/DT208G-moment1"
-          >https://github.com/RobinHawiz/DT208G-moment1</a
-        >
-        och har modifierats för att passa denna uppgift. Detta för att spara tid
-        då jag la en del tid och energi åt att skapa en robust backend. Men det
-        som är nice nu är att jag har en bra strukturerad backend att utgå från
-        i framtida projekt/uppgifter.
-      </p>
-      <p>
-        Jag lärde mig även en hel del av att klona och modifiera en redan
-        existerande kodbas. Jag märkte nämligen hur användbart TypeScript
-        faktiskt är. För när jag väl behövde ändra en del typer så pekade
-        lintern på saker som jag annars hade glömt att ändra. Jag har även
-        konfigurerat TypeScript att även klaga när jag har glömt att städa upp
-        oanvända variabler eller imports när jag kör min kod. TypeScript såg
-        helt enkelt till att jag inte fick en massa runtime errors (så länge jag
-        inte använde mig av typen any, vilket jag gjorde lite grann).
-      </p>
-      <p>
-        På grund av att vi var tvungna att hantera validering på serversidan så
-        lärde jag mig att hantera errors på ett mer advancerat sätt via
-        frontend. Tidigare slängde jag bara errors och brydde mig inte riktigt
-        om detta. Men när jag väl behövde validera via servern och debugga
-        möjliga errors? Nu kunde jag inte bara slänga ett error som säger
-        "Unknown server error" så fort något gick snett. Jag behövde faktiskt
-        veta vad mina errors betydde och dessutom hantera dem. Lärde mig också
-        att skriva mer advancerade fetch-anrop (via Fetch API) där jag använder
-        mig av request method, header och body.
-      </p>
-      <p>
-        Jag lärde mig naturligtvis en hel del kring backend-programmering.
-        Mycket har med konfigureringar att göra. Så konfigurera routes,
-        middleware, cors, env variabler, osv. Det är rätt så meckigt då ett
-        pyttelitet fel kan fritera hela backend-servern. Men om jag ska vara
-        lite mer konkret i vad jag har lärt mig så var det nog hur man använder
-        sig av biblioteket mssql för att kommunicera med en Microsoft SQL Server
-        databas. Har även lärt mig hur man kan kringgå SQL-injektion genom att
-        använda parameterbinding och lagrade procedurer. Jag skickar alltså inte
-        rå SQL-kod där parametrar läggs till via stränginterpolering. Istället
-        använder jag parameterbinding med hjälp av request.input(), som binder
-        värdena till typade platshållare i en lagrad procedur. Det säkerställer
-        att SQL Server behandlar inmatningen som data — inte som körbar SQL —
-        vilket helt förhindrar SQL-injektion.
-      </p>
-      <p>
-        Jag lärde mig också lite om Azure, men mycket kunde jag redan sedan
-        tidigare. Om du märker att jag har missat något så får du säga till så
-        rättar jag till det!
+        Det jag har lärt mig från mitt tidigare försök hittar du här:
+        <a href="https://robinhawiz.github.io/DT207G-moment1-frontend/about/"
+          >https://robinhawiz.github.io/DT207G-moment1-frontend/about/</a
+        >. Utöver det jag har lärt mig sedan tidigare är hur man skapar en
+        fullstack webbapp med en view engine som kallas EJS. Och att Form
+        element inte stödjer PUT och DELETE metoder.
       </p>
     </main>
   </body>

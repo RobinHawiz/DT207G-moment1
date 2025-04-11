@@ -10,7 +10,7 @@ export async function coursesRoutes() {
   const pool = ""; // await connectToDatabase();
   const router = Router();
 
-  router.get("/", async (req, res) => {
+  router.get("/", async (_req, res) => {
     try {
       const pool = await connectToDatabase();
       const result = await new sql.Request(pool).execute("spCourses_GetAll");
