@@ -10,12 +10,23 @@ export async function coursesRoutes() {
   const pool = ""; // await connectToDatabase();
   const router = Router();
 
-  router.get("/", async (_req, res) => {
-    // const result = await new sql.Request(pool).execute("spCourses_GetAll");
-    res.send(
-      `User: ${process.env.DB_USER}, Pass: ${process.env.DB_PASSWORD}, Host: ${process.env.DB_HOST}, dbname: ${process.env.DB_NAME}, port: ${process.env.PORT}`
-    );
-    //res.render("index", { courses });
+  router.get("/", async (req, res) => {
+    try {
+      const pool = await connectToDatabase();
+      const result = await new sql.Request(pool).execute("spCourses_GetAll");
+      const courses = result.recordset ?? [];
+      res.render("index", { courses });
+    } catch (err) {
+      res.status(500).send(`
+        <pre>
+        Database Error:
+        ${err.message}
+  
+        stack:
+        ${err.stack}
+        </pre>
+      `);
+    }
   });
 
   // This route will delete data and has to recieve a post request because HTML Forms don't support delete methods.
