@@ -1,0 +1,44 @@
+@use "sass:color";
+
+// Colors
+$body-color: #212121;
+$form-button-bg-color: #212121;
+$form-button-bg-color-before: #111111;
+$form-button-bg-color-hover: #ffffff;
+
+// Font colors
+$h1-color: #ffffff;
+$h2-color: color.adjust($h1-color, $lightness: -10%);
+$form-color: #ffffff;
+$form-button-color: #ffffff;
+$form-button-color-hover: color.adjust($form-button-color, $lightness: -80%);
+$table-color: #ffffff;
+$a-color: #ffffff;
+$a-color-hover: color.adjust($a-color, $lightness: -30%);
+$p-color: color.adjust($h1-color, $lightness: -10%);
+
+// Font sizes desktop
+$h1-font: 7rem;
+$h2-font: 4rem;
+$nav-font: 2rem;
+$form-font: 2rem;
+$form-input-font: 1.8rem;
+$form-button-font: 1.8rem;
+$table-font: 2rem;
+$p-font: 1.8rem;
+
+// Font sizes mobile
+$h1-font-mobile: 5rem;
+$nav-font-mobile: 1.6rem;
+$form-font-mobile: 1.6rem;
+$form-input-font-mobile: 1.4rem;
+$form-button-font-mobile: 1.4rem;
+$table-font-mobile: 1.6rem;
+
+// Font line heights
+$p-line-height: 2.4rem;
+
+// Media query breakpoints
+$breakpoints: (
+  mobile: 480px,
+);

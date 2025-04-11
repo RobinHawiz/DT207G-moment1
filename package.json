@@ -1,0 +1,33 @@
+{
+  "name": "dt207g-moment1",
+  "version": "1.0.0",
+  "description": "Fullstack app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinHawiz/DT207G-moment1-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/RobinHawiz/DT207G-moment1-backend/issues"
+  },
+  "homepage": "https://github.com/RobinHawiz/DT207G-moment1-backend#readme",
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "mssql": "^11.0.1",
+    "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

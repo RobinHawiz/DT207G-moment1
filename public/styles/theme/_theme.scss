@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as v;
+
+body {
+  background-color: v.$body-color;
+}
+
+h1 {
+  color: v.$h1-color;
+}
+
+h2 {
+  color: v.$h2-color;
+}
+
+p {
+  color: v.$p-color;
+}
+
+a {
+  color: v.$a-color;
+  &:hover {
+    color: v.$a-color-hover;
+  }
+}
+
+ul {
+  color: v.$p-color;
+}
+
+form {
+  color: v.$form-color;
+  .button-wrapper::before {
+    background-color: v.$form-button-bg-color-before;
+  }
+  button {
+    border: 0.2rem solid v.$form-button-color;
+    border-radius: 1rem;
+    background: v.$form-button-bg-color;
+    color: v.$form-button-color;
+    &:hover {
+      background: v.$form-button-bg-color-hover;
+      color: v.$form-button-color-hover;
+    }
+  }
+}
+
+table {
+  color: v.$table-color;
+  td {
+    border-top: 0.1rem solid v.$table-color;
+  }
+}

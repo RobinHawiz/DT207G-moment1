@@ -1,0 +1,146 @@
+@use "../abstracts/mixins" as m;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+nav {
+  @include m.flex(center, center, row);
+  min-height: 10vh;
+  min-height: 10svh;
+  ul {
+    @include m.flex(normal, normal, row);
+  }
+  li {
+    padding: 2rem;
+    list-style-type: none;
+  }
+}
+
+main {
+  @include m.flex(center, normal, column);
+  margin: 0 5%;
+  @include m.media-query(mobile) {
+    margin-top: 7rem;
+  }
+  .error {
+    margin-top: 2rem;
+    align-self: center;
+  }
+  form {
+    @include m.flex(end, space-between, column);
+    gap: 1rem;
+    max-width: 66rem;
+    width: 100%;
+    margin-top: 2rem;
+    @include m.media-query(mobile) {
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .label-input-container {
+      @include m.flex(normal, space-between, column);
+      width: 100%;
+    }
+    label {
+      @include m.flex(normal, normal, column);
+      margin-top: 1rem;
+    }
+    input {
+      width: 100%;
+      margin-top: 0.3rem;
+      padding: 0.3rem;
+    }
+    .button-wrapper {
+      margin-top: 1rem;
+      position: relative;
+      pointer-events: none;
+      &:hover::before {
+        transform: translate(10%, 15%);
+      }
+      & button:hover {
+        transform: translateY(-10%);
+      }
+    }
+    .button-wrapper::before {
+      width: 10rem;
+      height: 3.2rem;
+      content: "";
+      top: 0;
+      left: 0;
+      border-radius: 0.8rem;
+      transition: transform 0.2s ease;
+      position: absolute;
+      pointer-events: none;
+    }
+    button {
+      width: 10rem;
+      height: 3.2rem;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      pointer-events: auto;
+    }
+  }
+  table {
+    max-width: 66rem;
+    width: 100%;
+    margin-top: 5rem;
+    border-collapse: collapse;
+    th {
+      padding-bottom: 2rem;
+    }
+    th:nth-child(1) {
+      width: 20%;
+      padding-right: 1rem;
+      text-align: left;
+    }
+    th:nth-child(2) {
+      width: 60%;
+      text-align: left;
+    }
+    th:nth-child(3) {
+      width: 20%;
+    }
+    td {
+      padding: 2rem 0;
+    }
+    td:nth-child(3) {
+      text-align: center;
+    }
+    td form {
+      margin: 0;
+    }
+    button {
+      width: 3rem;
+      cursor: pointer;
+    }
+  }
+  ul {
+    margin-left: 1.5rem;
+    align-self: self-start;
+    li {
+      margin: 1rem 0;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+p {
+  margin: 1rem 0;
+  align-self: self-start;
+}

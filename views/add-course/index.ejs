@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DT207G-Moment 1</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="..">Homepage</a>
+        </li>
+        <li>
+          <a href=".">Add course</a>
+        </li>
+        <li>
+          <a href="../about/">About</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Lägg till kurs</h1>
+      <% if(locals.errors.length > 0) {%> <% errors.forEach((error) => { %>
+      <p class="error"><%= error%></p>
+      <%});%> <%} %>
+      <form method="post">
+        <div class="label-input-container">
+          <label>
+            Kurskod
+            <input id="course-code" type="text" name="courseCode" />
+          </label>
+          <label>
+            Kursnamn
+            <input id="course-name" type="text" name="courseName" />
+          </label>
+          <label>
+            Progression
+            <input id="progression" type="text" name="progression" />
+          </label>
+          <label>
+            Kursplan
+            <input id="syllabus" type="text" name="syllabus" />
+          </label>
+        </div>
+        <div class="button-wrapper">
+          <button>Lägg till</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

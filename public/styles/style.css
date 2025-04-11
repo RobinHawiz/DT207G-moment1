@@ -1,0 +1,288 @@
+h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  font-size: 4rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+p,
+ul {
+  font-size: 1.8rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  line-height: 2.4rem;
+}
+
+nav {
+  font-size: 2rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  nav {
+    font-size: 1.6rem;
+  }
+}
+
+form {
+  font-size: 2rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  form {
+    font-size: 1.6rem;
+  }
+}
+form input {
+  font-size: 1.8rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  form input {
+    font-size: 1.4rem;
+  }
+}
+form button {
+  font-size: 1.8rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  form button {
+    font-size: 1.4rem;
+  }
+}
+
+table {
+  font-size: 2rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  table {
+    font-size: 1.6rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-height: 10vh;
+  min-height: 10svh;
+}
+nav ul {
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: row;
+}
+nav li {
+  padding: 2rem;
+  list-style-type: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: column;
+  margin: 0 5%;
+}
+@media screen and (max-width: 480px) {
+  main {
+    margin-top: 7rem;
+  }
+}
+main .error {
+  margin-top: 2rem;
+  align-self: center;
+}
+main form {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 66rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 480px) {
+  main form {
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main form .label-input-container {
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+}
+main form label {
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+main form input {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.3rem;
+}
+main form .button-wrapper {
+  margin-top: 1rem;
+  position: relative;
+  pointer-events: none;
+}
+main form .button-wrapper:hover::before {
+  transform: translate(10%, 15%);
+}
+main form .button-wrapper button:hover {
+  transform: translateY(-10%);
+}
+main form .button-wrapper::before {
+  width: 10rem;
+  height: 3.2rem;
+  content: "";
+  top: 0;
+  left: 0;
+  border-radius: 0.8rem;
+  transition: transform 0.2s ease;
+  position: absolute;
+  pointer-events: none;
+}
+main form button {
+  width: 10rem;
+  height: 3.2rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  pointer-events: auto;
+}
+main table {
+  max-width: 66rem;
+  width: 100%;
+  margin-top: 5rem;
+  border-collapse: collapse;
+}
+main table th {
+  padding-bottom: 2rem;
+}
+main table th:nth-child(1) {
+  width: 20%;
+  padding-right: 1rem;
+  text-align: left;
+}
+main table th:nth-child(2) {
+  width: 60%;
+  text-align: left;
+}
+main table th:nth-child(3) {
+  width: 20%;
+}
+main table td {
+  padding: 2rem 0;
+}
+main table td:nth-child(3) {
+  text-align: center;
+}
+main table td form {
+  margin: 0;
+}
+main table button {
+  width: 3rem;
+  cursor: pointer;
+}
+main ul {
+  margin-left: 1.5rem;
+  align-self: self-start;
+}
+main ul li {
+  margin: 1rem 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+p {
+  margin: 1rem 0;
+  align-self: self-start;
+}
+
+body {
+  background-color: #212121;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+h2 {
+  color: #e6e6e6;
+}
+
+p {
+  color: #e6e6e6;
+}
+
+a {
+  color: #ffffff;
+}
+a:hover {
+  color: #b3b3b3;
+}
+
+ul {
+  color: #e6e6e6;
+}
+
+form {
+  color: #ffffff;
+}
+form .button-wrapper::before {
+  background-color: #111111;
+}
+form button {
+  border: 0.2rem solid #ffffff;
+  border-radius: 1rem;
+  background: #212121;
+  color: #ffffff;
+}
+form button:hover {
+  background: #ffffff;
+  color: #333333;
+}
+
+table {
+  color: #ffffff;
+}
+table td {
+  border-top: 0.1rem solid #ffffff;
+}/*# sourceMappingURL=style.css.map */

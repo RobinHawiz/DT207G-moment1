@@ -1,0 +1,61 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+h1 {
+  font-size: v.$h1-font;
+  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  @include m.media-query(mobile) {
+    font-size: v.$h1-font-mobile;
+  }
+}
+
+h2 {
+  font-size: v.$h2-font;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+p,
+ul {
+  font-size: v.$p-font;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  line-height: v.$p-line-height;
+}
+
+nav {
+  font-size: v.$nav-font;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  @include m.media-query(mobile) {
+    font-size: v.$nav-font-mobile;
+  }
+}
+
+form {
+  font-size: v.$form-font;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  @include m.media-query(mobile) {
+    font-size: v.$form-font-mobile;
+  }
+  input {
+    font-size: v.$form-input-font;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    @include m.media-query(mobile) {
+      font-size: v.$form-input-font-mobile;
+    }
+  }
+  button {
+    font-size: v.$form-button-font;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    @include m.media-query(mobile) {
+      font-size: v.$form-button-font-mobile;
+    }
+  }
+}
+
+table {
+  font-size: v.$table-font;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  @include m.media-query(mobile) {
+    font-size: v.$table-font-mobile;
+  }
+}

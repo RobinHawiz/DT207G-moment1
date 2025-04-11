@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DT207G-Moment 1</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href=".">Homepage</a>
+        </li>
+        <li>
+          <a href="add-course/">Add course</a>
+        </li>
+        <li>
+          <a href="about/">About</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Mina kurser</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Kurskod</th>
+            <th>Kursnamn</th>
+            <th>Progression</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(courses.length > 0) { %> <%courses.forEach((course) => { %>
+          <tr>
+            <td>
+              <a href="<%= course.syllabus %>" target="_blank"
+                ><%= course.courseCode %></a
+              >
+            </td>
+            <td><%= course.courseName %></td>
+            <td><%= course.progression %></td>
+            <td>
+              <form method="post">
+                <input type="hidden" name="id" value="<%= course.id%>" />
+                <button>X</button>
+              </form>
+            </td>
+          </tr>
+          <%});%> <% } else { %>
+          <tr>
+            <td colspan="3">Inga kurser finns tillgängliga.</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
